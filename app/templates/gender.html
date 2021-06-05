@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+    <div class="container">
+      <br><br>
+        <h3 class="content">Gender Classification</h3>
+    </div>
+
+    <div class="container">
+        <form action="#" method= "POST" enctype="multipart/form-data">
+            <label for="upload">Upload to predict</label>
+            <input type="file" id= 'upload' name='image' required="true">
+            <input type="submit" value="upload & predict">
+        </form>
+    </div>
+
+    {% if  upload2 %}
+        <div class="container">
+            <div class="rows">
+                <div class="col-md-12">
+                    <table>
+                    <tr>
+                        <td>
+                            <img src="{{  url_for('static',filename='upload/')  }}{{ img_name }}" alt="" width="{{w2}}" height="300">
+                        </td>
+                        <td width='400'></td>
+                        <td>
+                            <img src="{{  url_for('static',filename='predict/')  }}{{ img_name }}" alt="" width="{{w2}}" height="300">
+                        </td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endblock  %}
